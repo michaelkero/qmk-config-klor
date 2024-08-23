@@ -122,8 +122,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
    [_LOWER] = LAYOUT_polydactyl(
  //╷         ╷         ╷         ╷         ╷         ╷         ╷         ╷╷         ╷         ╷         ╷         ╷         ╷         ╷         ╷
               KC_GRAVE, KC_TILD,  KC_CIRC,  KC_PAST,  KC_PPLS,                       KC_HASH,  KC_LCBR,  KC_RCBR,  KC_LABK,  KC_RABK,
-    _______,  KC_PIPE , KC_AMPR,  KC_EXLM,  KC_EQL,   KC_UNDS,                       KC_DLR,   KC_LPRN,  KC_RPRN,  KC_QUOT,  KC_DQT ,  _______,
-    _______,  KC_BSLS , _______,  KC_PERC,  KC_SLSH,  KC_MINS,  _______,   _______,  KC_AT,    KC_LBRC,  KC_RBRC,  _______,  _______,  _______,
+    _______,  KC_PIPE,  KC_AMPR,  KC_EXLM,  KC_EQL,   KC_UNDS,                       KC_DLR,   KC_LPRN,  KC_RPRN,  KC_QUOT,  KC_DQT ,  _______,
+    _______,  _______,  _______,  KC_PERC,  KC_SLSH,  KC_MINS,  _______,   _______,  KC_AT,    KC_LBRC,  KC_RBRC,  _______,  KC_BSLS,  _______,
                                   _______,  _______,  _______,  _______,   KC_DEL ,  _______,  _______,  _______
 ),
 
