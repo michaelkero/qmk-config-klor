@@ -99,9 +99,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
    [_QWERTY] = LAYOUT_polydactyl(
  //╷         ╷         ╷         ╷         ╷         ╷         ╷         ╷╷         ╷         ╷         ╷         ╷         ╷         ╷         ╷
               KC_Q,     KC_W,     KC_E,     KC_R,     KC_T,                          KC_Y,     KC_U,     KC_I,     KC_O,     KC_P,
-    _______,  KC_A,     KC_S,     KC_D,     KC_F,     KC_G,                          KC_H,     KC_J,     KC_K,     KC_L,     KC_SCLN,  _______,
+    KC_LALT,  KC_A,     KC_S,     KC_D,     KC_F,     KC_G,                          KC_H,     KC_J,     KC_K,     KC_L,     KC_SCLN,  KC_RGUI,
     KC_LCTL,  KC_Z,     KC_X,     KC_C,     KC_V,     KC_B,     KC_MUTE,   _______,  KC_N,     KC_M,     KC_COMM,  KC_DOT,   KC_SLSH,  KC_RSFT,
-                                  KC_LGUI,  LOWER,    SFT_SPC,  KC_ESC,    KC_BSPC,  CTL_ENT,  RAISE,    KC_LALT
+                                  KC_LGUI,  LOWER,    SFT_SPC,  KC_BSPC,   KC_ESC,   CTL_ENT,  RAISE,    KC_LALT
 ),
 
  /*
@@ -124,7 +124,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
               KC_GRAVE, KC_TILD,  KC_CIRC,  KC_PAST,  KC_PPLS,                       KC_HASH,  KC_LCBR,  KC_RCBR,  KC_LABK,  KC_RABK,
     _______,  KC_PIPE,  KC_AMPR,  KC_EXLM,  KC_EQL,   KC_UNDS,                       KC_DLR,   KC_LPRN,  KC_RPRN,  KC_QUOT,  KC_DQT ,  _______,
     _______,  _______,  _______,  KC_PERC,  KC_SLSH,  KC_MINS,  _______,   _______,  KC_AT,    KC_LBRC,  KC_RBRC,  _______,  KC_BSLS,  _______,
-                                  _______,  _______,  _______,  _______,   KC_DEL ,  _______,  _______,  _______
+                                  _______,  _______,  _______,  KC_DEL,    _______,  _______,  _______,  _______
 ),
 
  /*
@@ -355,17 +355,17 @@ int layerstate = 0;
 
 layer_state_t layer_state_set_kb(layer_state_t state) {
       switch (get_highest_layer(layer_state | default_layer_state)) {
+            case 0:
+                strcpy ( layer_state_str, "ABCs"); // Base Qwerty
+                break;
             case 1:
-                strcpy ( layer_state_str, "BASE QWERTY");
+                strcpy ( layer_state_str, "!@#$%^&*()_+"); // Lower
                 break;
             case 2:
-                strcpy ( layer_state_str, "LOWER");
+            strcpy ( layer_state_str, "<v^> & ###"); // Raise
                 break;
             case 3:
-                strcpy ( layer_state_str, "RAISE");
-                break;
-            case 4:
-                strcpy ( layer_state_str, "ADJUST");
+                strcpy ( layer_state_str, "FUNC"); // Adjust
                 break;
             default:
                 strcpy ( layer_state_str, "XXXXXX");
