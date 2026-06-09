@@ -61,8 +61,10 @@ enum custom_keycodes {
 
 #define SFT_SPC LSFT_T(KC_SPC)
 #define ALT_GRV LALT_T(KC_GRAVE)
+#define ALT_ESC LALT_T(KC_ESC)
 #define CTL_ENT LCTL_T(KC_ENT)
 #define GUI_QUT RGUI_T(KC_QUOT)
+#define GUI_BSPC RGUI_T(KC_BSPC)
 
 // ┌───────────────────────────────────────────────────────────┐
 // │ d e f i n e   s o u n d s                                 │
@@ -101,7 +103,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
    [_QWERTY] = LAYOUT_polydactyl(
  //╷         ╷         ╷         ╷         ╷         ╷         ╷         ╷╷         ╷         ╷         ╷         ╷         ╷         ╷         ╷
               KC_Q,     KC_W,     KC_E,     KC_R,     KC_T,                          KC_Y,     KC_U,     KC_I,     KC_O,     KC_P,
-    ALT_GRV,  KC_A,     KC_S,     KC_D,     KC_F,     KC_G,                          KC_H,     KC_J,     KC_K,     KC_L,     KC_SCLN,  GUI_QUT,
+    ALT_ESC,  KC_A,     KC_S,     KC_D,     KC_F,     KC_G,                          KC_H,     KC_J,     KC_K,     KC_L,     KC_SCLN,  GUI_BSPC,
     CTL_ENT,  KC_Z,     KC_X,     KC_C,     KC_V,     KC_B,     KC_MUTE,   _______,  KC_N,     KC_M,     KC_COMM,  KC_DOT,   KC_SLSH,  SFT_SPC,
                                   KC_LGUI,  LOWER,    SFT_SPC,  KC_BSPC,   KC_ESC,   CTL_ENT,  RAISE,    KC_LALT
 ),
@@ -113,9 +115,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
    │ l o w e r                                                 │
    └───────────────────────────────────────────────────────────┘
              ┌─────────┬─────────┬─────────┬─────────┬─────────┐                    ┌─────────┬─────────┬─────────┬─────────┬─────────┐
-             │         │         │    ^    │    *    │    +    │ ╭╮╭╮╭╮╭╮╭╮╭╮╭╮╭╮╭╮ │    #    │    {    │    }    │    <    │    >    │   
+             │    `    │    ~    │    ^    │    *    │    +    │ ╭╮╭╮╭╮╭╮╭╮╭╮╭╮╭╮╭╮ │    #    │    {    │    }    │    <    │    >    │   
    ┌─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤ │╰╯╰╯╰╯╰╯╰╯╰╯╰╯╰╯│ ├─────────┼─────────┼─────────┼─────────┼─────────┼─────────┐
-   │         │     |   │    &    │    !    │    =    │    _    ├─╯                ╰─┤    $    │    (    │    )    │         │         │         │
+   │         │    |    │    &    │    !    │    =    │    _    ├─╯                ╰─┤    $    │    (    │    )    │    "    │    '    │         │
    ├─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤╭────────╮╭────────╮├─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤
    │         │         │         │    %    │     /   │    -    ││  MUTE  ││PLY/PSE ││    @    │    [    │    ]    │         │    \    │         │
    └─────────┴─────────┴─────────┼─────────┼─────────┼─────────┼╰────────╯╰────────╯┼─────────┼─────────┼─────────┼─────────┴─────────┴─────────┘
@@ -123,8 +125,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                  └─────────┴─────────┴─────────┴─────────┘└─────────┴─────────┴─────────┴─────────┘ */ 
    [_LOWER] = LAYOUT_polydactyl(
  //╷         ╷         ╷         ╷         ╷         ╷         ╷         ╷╷         ╷         ╷         ╷         ╷         ╷         ╷         ╷
-              KC_GRAVE, _______,  KC_CIRC,  KC_PAST,  KC_PPLS,                       KC_HASH,  KC_LCBR,  KC_RCBR,  KC_LABK,  KC_RABK,
-    _______,  KC_PIPE,  KC_AMPR,  KC_EXLM,  KC_EQL,   KC_UNDS,                       KC_DLR,   KC_LPRN,  KC_RPRN,  _______,  KC_QUOT,  _______,
+              KC_GRAVE, KC_TILD,  KC_CIRC,  KC_PAST,  KC_PPLS,                       KC_HASH,  KC_LCBR,  KC_RCBR,  KC_LABK,  KC_RABK,
+    _______,  KC_PIPE,  KC_AMPR,  KC_EXLM,  KC_EQL,   KC_UNDS,                       KC_DLR,   KC_LPRN,  KC_RPRN,  KC_DQT,   KC_QUOT,  _______,
     _______,  _______,  _______,  KC_PERC,  KC_SLSH,  KC_MINS,  _______,   _______,  KC_AT,    KC_LBRC,  KC_RBRC,  _______,  KC_BSLS,  _______,
                                   _______,  _______,  _______,  _______,   _______,  _______,  _______,  _______
 ),
